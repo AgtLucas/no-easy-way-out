@@ -7,27 +7,27 @@
 var React = require('react-native');
 var {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View,
+  StatusBarIOS,
+  StyleSheet
 } = React;
 
+// var PageScroller = require('./examples/PageScroller');
+// var CoverFlow = require('./examples/CoverFlow');
+var AnimatedFormula = require('./examples/AnimatedFormula');
+var PullToRefresh = require('./examples/PullToRefresh');
+var Tree = require('./examples/PullToRefresh/Tree');
+var WindowShade = require('./examples/WindowShade');
+
 var newo = React.createClass({
+
+  componentWillMount() {
+    StatusBarIOS.setStyle('light-content');
+  },
+
   render: function() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
+    return(
+      <PullToRefresh />
+    )
   }
 });
 
